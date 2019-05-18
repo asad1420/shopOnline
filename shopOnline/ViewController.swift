@@ -7,19 +7,48 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var userName: UITextField!
+    @IBOutlet weak var password: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        
+        
+        
     }
 
+    @IBAction func submit(_ sender: Any) {
+        
+        if userName.text == "admin" && password.text == "admin" {
+        
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController: UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "admin")
+            self.present(viewController, animated: true, completion: nil)
+        
+        }
+        
+        
+    }
 
+    @IBAction func guestControl(_ sender: Any) {
+        
+        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController: UIViewController = mainStoryboard.instantiateViewController(withIdentifier: "guest")
+        self.present(viewController, animated: true, completion: nil)
+        
+    }
+    
 }
 
